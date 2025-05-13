@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://hkqf6u8cpgaq"]
+
+[ext_resource type="Script" path="res://interact_area.gd" id="1_wxlvh"]
+
+[node name="InteractArea" type="Node2D"]
+script = ExtResource("1_wxlvh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

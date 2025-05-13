@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba8dedrg1j0w"]
+
+[ext_resource type="Texture2D" uid="uid://bj003crww1080" path="res://textures/dialogue_box.png" id="1_u4xhg"]
+[ext_resource type="FontFile" uid="uid://cd5w8ymg5smq6" path="res://fonts/pixelpurl/PixelPurl.ttf" id="2_gg8gu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_70ibm"]
+font = ExtResource("2_gg8gu")
+
+[node name="DialogueBox" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
+texture = ExtResource("1_u4xhg")
+
+[node name="Label" type="Label" parent="TextureRect"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 189.0
+offset_bottom = 39.0
+text = "This is a dialogue box test hi "
+label_settings = SubResource("LabelSettings_70ibm")
+autowrap_mode = 3
