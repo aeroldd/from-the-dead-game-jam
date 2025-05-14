@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://bhmro2xyhd37b"]
+
+[ext_resource type="Script" path="res://scripts/Option.gd" id="1_fbyy7"]
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="2_6xwpq"]
+
+[sub_resource type="Resource" id="Resource_u8t0h"]
+script = ExtResource("1_fbyy7")
+option_name = "Yes!"
+
+[sub_resource type="Resource" id="Resource_th7cl"]
+script = ExtResource("1_fbyy7")
+option_name = "Freak no!"
+
+[resource]
+script = ExtResource("2_6xwpq")
+raw_text = "Are you ready to enter the Blackmoore Manor?"
+dialogue_id = 3
+speaker = "Police man"
+wait_time = 1.0
+options = Array[ExtResource("1_fbyy7")]([SubResource("Resource_u8t0h"), SubResource("Resource_th7cl")])

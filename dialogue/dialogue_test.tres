@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://s882lmy46xoo"]
+
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="1_0s8qa"]
+
+[resource]
+script = ExtResource("1_0s8qa")
+raw_text = "Ohio judo samurai"
+dialogue_id = 0
+speaker = "Test resource???"

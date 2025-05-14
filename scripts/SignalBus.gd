@@ -9,4 +9,4 @@ signal interact()
 signal trigger_event(event: Event)
 
 signal show_dialogue(dialogue: Dialogue)
-signal dialogue_finished()
+signal dialogue_finished(dialogue: Dialogue)

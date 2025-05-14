@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bum884cm7nf4i"]
+
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="1_f6atb"]
+
+[resource]
+script = ExtResource("1_f6atb")
+raw_text = "... BRRRR ...... BUZZZZ \\n Is this thing even on? \\n Aerold. Aerold... Aerold. Is this thing on? \\n The van must have arrived at the Blackmoore Manor. \\n Come on! Pick UP!"
+dialogue_id = 2
+speaker = "RADIO"

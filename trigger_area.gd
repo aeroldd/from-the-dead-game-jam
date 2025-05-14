@@ -46,6 +46,3 @@ func _input(input_event):
 		print("trigger!!!")
 		event.trigger()
 		triggered = true			
-
-func _process(delta):
-	print(GameState.dialogue_active)

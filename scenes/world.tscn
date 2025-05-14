@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://y5dg83uyrs23"]
+[gd_scene load_steps=11 format=3 uid="uid://y5dg83uyrs23"]
 
 [ext_resource type="PackedScene" uid="uid://cysf0lorudaq4" path="res://scenes/player.tscn" id="1_2mlbj"]
 [ext_resource type="PackedScene" uid="uid://hkqf6u8cpgaq" path="res://scenes/interact_area.tscn" id="2_gl0lf"]
+[ext_resource type="Resource" uid="uid://s882lmy46xoo" path="res://dialogue/dialogue_test.tres" id="3_78at1"]
 [ext_resource type="PackedScene" uid="uid://ba8dedrg1j0w" path="res://ui/dialogue_box.tscn" id="3_u3agk"]
 [ext_resource type="Texture2D" uid="uid://bf6x0tloyr4gy" path="res://textures/test_interactable.png" id="3_wg475"]
 [ext_resource type="PackedScene" uid="uid://x56nhms7p4tf" path="res://scenes/trigger_area.tscn" id="5_2ikmh"]
 [ext_resource type="PackedScene" uid="uid://cdbsihr504632" path="res://scenes/dialogue_event.tscn" id="6_jaxxj"]
+[ext_resource type="Resource" uid="uid://bhmro2xyhd37b" path="res://dialogue/intro/police_man_3.tres" id="8_pgkpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dfxt"]
 
@@ -26,8 +28,8 @@ position = Vector2(242, 63)
 [node name="CollisionShape2D" parent="InteractArea2/TriggerArea" index="0"]
 shape = SubResource("RectangleShape2D_8dfxt")
 
-[node name="Dialogue" parent="InteractArea2/TriggerArea/DialogueEvent" index="0"]
-text = Array[String](["Hi", "This is the dialogue system", "Different objects can be interacted with!!!"])
+[node name="DialogueEvent" parent="InteractArea2/TriggerArea" index="1"]
+dialogue = ExtResource("3_78at1")
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractArea2"]
 texture = ExtResource("3_wg475")
@@ -50,9 +52,7 @@ position = Vector2(153, 57)
 shape = SubResource("RectangleShape2D_fj84a")
 
 [node name="DialogueEvent" parent="TriggerArea" instance=ExtResource("6_jaxxj")]
-
-[node name="Dialogue" parent="TriggerArea/DialogueEvent" index="0"]
-text = Array[String](["Dialogue can be triggered if you step in its bounding area..."])
+dialogue = ExtResource("8_pgkpf")
 
 [editable path="InteractArea2"]
 [editable path="InteractArea2/TriggerArea"]

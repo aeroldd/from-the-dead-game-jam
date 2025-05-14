@@ -1,7 +1,7 @@
 extends Event
 
 class_name DialogueEvent
-@export var dialogue: Dialogue
+@export var dialogue: Resource
 
 func trigger():
 	super.trigger()
