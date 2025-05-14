@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdbsihr504632"]
+
+[ext_resource type="Script" path="res://scripts/DialogueEvent.gd" id="1_xufti"]
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="2_4ajti"]
+
+[node name="DialogueEvent" type="Node" node_paths=PackedStringArray("dialogue")]
+script = ExtResource("1_xufti")
+dialogue = NodePath("Dialogue")
+
+[node name="Dialogue" type="Node" parent="."]
+script = ExtResource("2_4ajti")
+text = Array[String](["Replace me!!!"])

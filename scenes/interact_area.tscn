@@ -1,15 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://hkqf6u8cpgaq"]
+[gd_scene load_steps=3 format=3 uid="uid://hkqf6u8cpgaq"]
 
-[ext_resource type="Script" path="res://interact_area.gd" id="1_wxlvh"]
+[ext_resource type="PackedScene" uid="uid://x56nhms7p4tf" path="res://scenes/trigger_area.tscn" id="2_ouxa5"]
+[ext_resource type="PackedScene" uid="uid://cdbsihr504632" path="res://scenes/dialogue_event.tscn" id="3_y2gkh"]
 
 [node name="InteractArea" type="Node2D"]
-script = ExtResource("1_wxlvh")
+process_mode = 3
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
+[node name="TriggerArea" parent="." node_paths=PackedStringArray("event") instance=ExtResource("2_ouxa5")]
+single_trigger = false
+interact_trigger = true
+event = NodePath("DialogueEvent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="DialogueEvent" parent="TriggerArea" instance=ExtResource("3_y2gkh")]
+process_mode = 3
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[editable path="TriggerArea/DialogueEvent"]

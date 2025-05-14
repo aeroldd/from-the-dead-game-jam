@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ba8dedrg1j0w"]
 
-[ext_resource type="Script" path="res://ui/dialogue_box.gd" id="1_hlb1h"]
+[ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_hlb1h"]
 [ext_resource type="Texture2D" uid="uid://bj003crww1080" path="res://textures/dialogue_box.png" id="1_u4xhg"]
 [ext_resource type="FontFile" uid="uid://cd5w8ymg5smq6" path="res://fonts/pixelpurl/PixelPurl.ttf" id="2_gg8gu"]
 
@@ -47,3 +47,9 @@ offset_right = 101.0
 offset_bottom = 24.0
 text = "Speaker's name"
 label_settings = SubResource("LabelSettings_ny6vj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
