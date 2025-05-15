@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://x56nhms7p4tf"]
+
+[ext_resource type="Script" path="res://trigger_area.gd" id="1_aj0la"]
+
+[node name="TriggerArea" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_aj0la")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

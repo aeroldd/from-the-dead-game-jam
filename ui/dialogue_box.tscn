@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba8dedrg1j0w"]
+[gd_scene load_steps=8 format=3 uid="uid://ba8dedrg1j0w"]
 
-[ext_resource type="Script" path="res://ui/dialogue_box.gd" id="1_hlb1h"]
+[ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_hlb1h"]
 [ext_resource type="Texture2D" uid="uid://bj003crww1080" path="res://textures/dialogue_box.png" id="1_u4xhg"]
 [ext_resource type="FontFile" uid="uid://cd5w8ymg5smq6" path="res://fonts/pixelpurl/PixelPurl.ttf" id="2_gg8gu"]
+[ext_resource type="FontFile" uid="uid://dau07rbtom42u" path="res://fonts/pixolletta8px/Pixolletta8px.ttf" id="4_susvq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_70ibm"]
 font = ExtResource("2_gg8gu")
@@ -10,24 +11,36 @@ font = ExtResource("2_gg8gu")
 [sub_resource type="LabelSettings" id="LabelSettings_ny6vj"]
 font = ExtResource("2_gg8gu")
 
-[node name="DialogueBox" type="Control"]
-texture_filter = 1
+[sub_resource type="Theme" id="Theme_l7mg6"]
+default_font = ExtResource("4_susvq")
+default_font_size = 10
+
+[node name="GUI" type="Control"]
 layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogueBox" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hlb1h")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="DialogueBox"]
 texture_filter = 1
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 50.0
 texture = ExtResource("1_u4xhg")
 
-[node name="Text" type="Label" parent="."]
+[node name="Text" type="Label" parent="DialogueBox"]
 texture_filter = 1
 texture_repeat = 1
 layout_mode = 0
@@ -35,15 +48,32 @@ offset_left = 10.0
 offset_top = 25.0
 offset_right = 189.0
 offset_bottom = 56.0
-text = "This is a dialogue box test hi "
 label_settings = SubResource("LabelSettings_70ibm")
 autowrap_mode = 3
 
-[node name="SpeakerName" type="Label" parent="."]
+[node name="SpeakerName" type="Label" parent="DialogueBox"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 1.0
-offset_right = 101.0
-offset_bottom = 24.0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 99.0
+offset_bottom = 16.0
 text = "Speaker's name"
 label_settings = SubResource("LabelSettings_ny6vj")
+
+[node name="Timer" type="Timer" parent="DialogueBox"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Wait" type="Timer" parent="DialogueBox"]
+
+[node name="Options" type="VBoxContainer" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = -69.0
+offset_right = 219.0
+offset_bottom = 13.0
+theme = SubResource("Theme_l7mg6")
+alignment = 2
+
+[connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox" method="_on_timer_timeout"]
+[connection signal="timeout" from="DialogueBox/Wait" to="DialogueBox" method="_on_wait_timeout"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://cnxtikvp4sr50"]
+
+[ext_resource type="Resource" uid="uid://bum884cm7nf4i" path="res://dialogue/intro/radio_2.tres" id="1_i2f8s"]
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="1_oq37q"]
+
+[resource]
+script = ExtResource("1_oq37q")
+raw_text = "!!! BREAKING NEWS !!! \\n May 14th 2005 \\n A family of 4 has disappeared overnight! The Blackmoore Family, owner of a vast estate, was reported to have \"disappeared\" with the father suspicious of murder. However his body was nowhere to be found. \\n May 16th 2025 \\n !!! Breaking news !!! \\n Blackmoore House Haunted??? \\n 10 disappearances have been reported in the past 24 hours alone! Police have barricaded the area and no one will be allowed to explore the area! Keep your children safe!!!"
+dialogue_id = 1
+speaker = "Television"
+next_dialogue = ExtResource("1_i2f8s")
+wait_time = null
+options = null

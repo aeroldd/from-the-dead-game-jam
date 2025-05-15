@@ -1,37 +1,61 @@
-[gd_scene load_steps=6 format=3 uid="uid://y5dg83uyrs23"]
+[gd_scene load_steps=11 format=3 uid="uid://y5dg83uyrs23"]
 
 [ext_resource type="PackedScene" uid="uid://cysf0lorudaq4" path="res://scenes/player.tscn" id="1_2mlbj"]
 [ext_resource type="PackedScene" uid="uid://hkqf6u8cpgaq" path="res://scenes/interact_area.tscn" id="2_gl0lf"]
+[ext_resource type="Resource" uid="uid://s882lmy46xoo" path="res://dialogue/dialogue_test.tres" id="3_78at1"]
 [ext_resource type="PackedScene" uid="uid://ba8dedrg1j0w" path="res://ui/dialogue_box.tscn" id="3_u3agk"]
 [ext_resource type="Texture2D" uid="uid://bf6x0tloyr4gy" path="res://textures/test_interactable.png" id="3_wg475"]
+[ext_resource type="PackedScene" uid="uid://x56nhms7p4tf" path="res://scenes/trigger_area.tscn" id="5_2ikmh"]
+[ext_resource type="PackedScene" uid="uid://cdbsihr504632" path="res://scenes/dialogue_event.tscn" id="6_jaxxj"]
+[ext_resource type="Resource" uid="uid://cnxtikvp4sr50" path="res://dialogue/intro/newspaper_1.tres" id="8_4y7rf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yn20t"]
-radius = 30.0666
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dfxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj84a"]
 
 [node name="world" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2mlbj")]
+z_index = 5
 position = Vector2(48, 45)
+collision_layer = 3
 
-[node name="InteractArea" parent="." instance=ExtResource("2_gl0lf")]
-z_index = -5
-position = Vector2(242, 94)
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="CollisionShape2D" parent="InteractArea/Area2D" index="0"]
-position = Vector2(21, -37)
-scale = Vector2(1.05256, 0.885045)
-shape = SubResource("CircleShape2D_yn20t")
+[node name="InteractArea2" parent="." instance=ExtResource("2_gl0lf")]
+position = Vector2(242, 63)
 
-[node name="Sprite2D" type="Sprite2D" parent="InteractArea"]
-texture_filter = 1
-position = Vector2(22, -36)
+[node name="CollisionShape2D" parent="InteractArea2/TriggerArea" index="0"]
+shape = SubResource("RectangleShape2D_8dfxt")
+
+[node name="DialogueEvent" parent="InteractArea2/TriggerArea" index="1"]
+dialogue = ExtResource("3_78at1")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractArea2"]
 texture = ExtResource("3_wg475")
 
-[node name="DialogueBox" parent="." instance=ExtResource("3_u3agk")]
-offset_left = 54.0
-offset_top = 103.0
-offset_right = 54.0
-offset_bottom = 103.0
-text = Array[String](["You interacted with this object in blank space!", "hello", "Dingle", "next page", "next page AGAIN", "whelp... another page"])
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
-[editable path="InteractArea"]
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource("3_u3agk")]
+process_mode = 3
+offset_left = 229.0
+offset_top = 206.0
+offset_right = 229.0
+offset_bottom = 206.0
+
+[node name="TriggerArea" parent="." node_paths=PackedStringArray("event") instance=ExtResource("5_2ikmh")]
+event = NodePath("DialogueEvent")
+
+[node name="CollisionShape2D" parent="TriggerArea" index="0"]
+position = Vector2(153, 57)
+shape = SubResource("RectangleShape2D_fj84a")
+
+[node name="DialogueEvent" parent="TriggerArea" instance=ExtResource("6_jaxxj")]
+dialogue = ExtResource("8_4y7rf")
+
+[editable path="InteractArea2"]
+[editable path="InteractArea2/TriggerArea"]
+[editable path="InteractArea2/TriggerArea/DialogueEvent"]
+[editable path="TriggerArea"]
+[editable path="TriggerArea/DialogueEvent"]
