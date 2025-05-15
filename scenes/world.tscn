@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bf6x0tloyr4gy" path="res://textures/test_interactable.png" id="3_wg475"]
 [ext_resource type="PackedScene" uid="uid://x56nhms7p4tf" path="res://scenes/trigger_area.tscn" id="5_2ikmh"]
 [ext_resource type="PackedScene" uid="uid://cdbsihr504632" path="res://scenes/dialogue_event.tscn" id="6_jaxxj"]
-[ext_resource type="Resource" uid="uid://bhmro2xyhd37b" path="res://dialogue/intro/police_man_3.tres" id="8_pgkpf"]
+[ext_resource type="Resource" uid="uid://cnxtikvp4sr50" path="res://dialogue/intro/newspaper_1.tres" id="8_4y7rf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dfxt"]
 
@@ -39,10 +39,10 @@ process_mode = 3
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource("3_u3agk")]
 process_mode = 3
-offset_left = 54.0
-offset_top = 103.0
-offset_right = 54.0
-offset_bottom = 103.0
+offset_left = 229.0
+offset_top = 206.0
+offset_right = 229.0
+offset_bottom = 206.0
 
 [node name="TriggerArea" parent="." node_paths=PackedStringArray("event") instance=ExtResource("5_2ikmh")]
 event = NodePath("DialogueEvent")
@@ -52,7 +52,7 @@ position = Vector2(153, 57)
 shape = SubResource("RectangleShape2D_fj84a")
 
 [node name="DialogueEvent" parent="TriggerArea" instance=ExtResource("6_jaxxj")]
-dialogue = ExtResource("8_pgkpf")
+dialogue = ExtResource("8_4y7rf")
 
 [editable path="InteractArea2"]
 [editable path="InteractArea2/TriggerArea"]
