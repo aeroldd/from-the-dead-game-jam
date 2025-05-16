@@ -13,6 +13,9 @@ var text: Array[String] = []
 
 @export var wait_time: float = 1
 
+@export var conditional_dialogue: Array[ConditionalDialogue]
+@export var set_flags: Array[String] # The flags that are going to be set after playing the dialogue
+
 @export var options: Array[Option]
 
 const MAX_LENGTH = 60

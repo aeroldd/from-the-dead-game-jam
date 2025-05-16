@@ -8,7 +8,7 @@ enum State {IDLE, WALKING, IMMOVABLE}
 
 # Node references
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var interaction_area = $Area2D
+@onready var interaction_area = $Hitbox
 @onready var state_label = $StateLabel  # Reference the existing StateLabel node
 
 # State variables

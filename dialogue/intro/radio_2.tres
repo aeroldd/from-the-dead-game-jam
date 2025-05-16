@@ -7,3 +7,7 @@ script = ExtResource("1_f6atb")
 raw_text = "... BRRRR ...... BUZZZZ \\n Is this thing even on? \\n Aerold. Aerold... Aerold. Is this thing on? \\n The van must have arrived at the Blackmoore Manor. \\n Come on! Pick UP!"
 dialogue_id = 2
 speaker = "RADIO"
+wait_time = null
+conditions = Array[String](["talked_to_ball"])
+set_flags = Array[String](["talked_to_ball"])
+options = null

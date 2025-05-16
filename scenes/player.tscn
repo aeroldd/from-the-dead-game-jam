@@ -190,17 +190,17 @@ shape = SubResource("CircleShape2D_0dssr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_8eu04")
-animation = &"idle_down"
+animation = &"walk_down"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_b1ct4")
 
-[node name="ColorRect" type="ColorRect" parent="Area2D"]
+[node name="ColorRect" type="ColorRect" parent="Hitbox"]
 offset_left = -17.0
 offset_right = 17.0
 offset_bottom = 34.0

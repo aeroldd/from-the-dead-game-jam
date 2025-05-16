@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("1_0s8qa")
 raw_text = "Ohio judo samurai"
-dialogue_id = 0
+dialogue_id = 1
 speaker = "Test resource???"
 wait_time = 1.0
+conditions = Array[String]([])
+set_flags = Array[String]([])
 options = Array[ExtResource("1_q4lvq")]([])

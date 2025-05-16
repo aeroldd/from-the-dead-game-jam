@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cj75ydd44t0fm"]
+
+[ext_resource type="PackedScene" uid="uid://cysf0lorudaq4" path="res://scenes/player.tscn" id="1_x4135"]
+[ext_resource type="PackedScene" uid="uid://x56nhms7p4tf" path="res://scenes/trigger_area.tscn" id="2_ov1ty"]
+[ext_resource type="PackedScene" uid="uid://cdbsihr504632" path="res://scenes/dialogue_event.tscn" id="3_q1nir"]
+[ext_resource type="Resource" uid="uid://dagkap087iqbb" path="res://dialogue/ball/ball_1.tres" id="4_aeo7f"]
+[ext_resource type="Texture2D" uid="uid://doa33jftb87cv" path="res://textures/ball.png" id="5_eyghk"]
+[ext_resource type="PackedScene" uid="uid://ba8dedrg1j0w" path="res://ui/dialogue_box.tscn" id="6_bivpd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ekogv"]
+radius = 38.3275
+
+[node name="world2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_x4135")]
+
+[node name="Hitbox" parent="Player" index="2"]
+collision_mask = 2
+
+[node name="TriggerArea" parent="." node_paths=PackedStringArray("event") instance=ExtResource("2_ov1ty")]
+process_mode = 0
+z_index = -1
+position = Vector2(100, 100)
+event = NodePath("DialogueEvent")
+
+[node name="CollisionShape2D" parent="TriggerArea" index="0"]
+shape = SubResource("CircleShape2D_ekogv")
+
+[node name="DialogueEvent" parent="TriggerArea" instance=ExtResource("3_q1nir")]
+dialogue = ExtResource("4_aeo7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="TriggerArea"]
+texture = ExtResource("5_eyghk")
+
+[node name="GUI" parent="." instance=ExtResource("6_bivpd")]
+
+[editable path="Player"]
+[editable path="TriggerArea"]

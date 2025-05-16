@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="InteractableObjectResource" load_steps=2 format=3 uid="uid://d0eaypxerrur5"]
+
+[ext_resource type="Script" path="res://scripts/InteractableObjectResource.gd" id="1_uc1vv"]
+
+[resource]
+script = ExtResource("1_uc1vv")
+collision_box = Rect2(0, 0, 0, 0)

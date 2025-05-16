@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjokg5crtxtyi"]
+
+[ext_resource type="PackedScene" uid="uid://hkqf6u8cpgaq" path="res://scenes/interact_area.tscn" id="1_bx5hg"]
+[ext_resource type="Script" path="res://scenes/interactable_object.gd" id="1_x4s1u"]
+[ext_resource type="Resource" uid="uid://b4nmtrn4gd7a1" path="res://interactable objects/ball.tres" id="2_n8i7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byb23"]
+size = Vector2(35, 35)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tciqx"]
+radius = 6.08276
+
+[node name="InteractableObject" type="CharacterBody2D"]
+script = ExtResource("1_x4s1u")
+data = ExtResource("2_n8i7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="InteractArea" parent="." instance=ExtResource("1_bx5hg")]
+
+[node name="CollisionShape2D" parent="InteractArea/TriggerArea" index="0"]
+shape = SubResource("RectangleShape2D_byb23")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tciqx")
+
+[editable path="InteractArea"]
+[editable path="InteractArea/TriggerArea"]
+[editable path="InteractArea/TriggerArea/DialogueEvent"]
