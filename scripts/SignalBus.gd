@@ -10,3 +10,5 @@ signal trigger_event(event: Event)
 
 signal show_dialogue(dialogue: Dialogue)
 signal dialogue_finished(dialogue: Dialogue)
+
+signal event_finished()

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConditionalDialogue" load_steps=3 format=3 uid="uid://c2hxmygo0m6sk"]
+
+[ext_resource type="Script" path="res://scripts/ConditionalDialogue.gd" id="1_d2fts"]
+[ext_resource type="Resource" uid="uid://cmnx43aqvhfcm" path="res://dialogue/dog/dog_bed_2.tres" id="1_mrhfg"]
+
+[resource]
+script = ExtResource("1_d2fts")
+conditions = Array[String](["detected_dog_ghost"])
+dialogue = ExtResource("1_mrhfg")

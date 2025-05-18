@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdbsihr504632"]
-
-[ext_resource type="Script" path="res://scripts/DialogueEvent.gd" id="1_xufti"]
-
-[node name="DialogueEvent" type="Node"]
-script = ExtResource("1_xufti")

@@ -13,11 +13,13 @@ script = ExtResource("1_aj0la")
 shape = SubResource("RectangleShape2D_n5xwq")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Trigger area"
 
 [node name="StateLabel" type="Label" parent="."]
+visible = false
 offset_left = 9.0
 offset_top = 36.0
 offset_right = 49.0
@@ -25,6 +27,7 @@ offset_bottom = 59.0
 text = "State:"
 
 [node name="Triggered" type="Label" parent="."]
+visible = false
 offset_left = 10.0
 offset_top = 72.0
 offset_right = 50.0

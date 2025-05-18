@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://cmnx43aqvhfcm"]
+
+[ext_resource type="Script" path="res://scripts/ConditionalDialogue.gd" id="1_f2mj5"]
+[ext_resource type="Script" path="res://scripts/Option.gd" id="2_42vbf"]
+[ext_resource type="Resource" uid="uid://biaav1qkww28o" path="res://dialogue/dog/dog_bed_option_1.tres" id="2_y5nn6"]
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="3_s1wij"]
+
+[resource]
+script = ExtResource("3_s1wij")
+raw_text = "On closer investigation, you notice your G-Freq-Out... freaking out?"
+dialogue_id = 0
+speaker = ""
+next_dialogue = ExtResource("2_y5nn6")
+wait_time = 1.0
+conditional_dialogue = Array[ExtResource("1_f2mj5")]([])
+set_flags = Array[String]([])
+options = Array[ExtResource("2_42vbf")]([])

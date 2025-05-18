@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://c2lq6oa1mx6h8"]
+
+[ext_resource type="Script" path="res://scripts/ConditionalDialogue.gd" id="1_f8fca"]
+[ext_resource type="Script" path="res://scripts/Option.gd" id="2_3gr32"]
+[ext_resource type="Resource" uid="uid://c2hxmygo0m6sk" path="res://dialogue/dog/dog_bed_conditional_1.tres" id="2_jorgk"]
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="3_2msxu"]
+
+[resource]
+script = ExtResource("3_2msxu")
+raw_text = "A mouldy, old dog bed. A foul smell fills your insides as you inspect the bed,"
+dialogue_id = 0
+speaker = ""
+wait_time = 1.0
+conditional_dialogue = Array[ExtResource("1_f8fca")]([ExtResource("2_jorgk")])
+set_flags = Array[String]([])
+options = Array[ExtResource("2_3gr32")]([])

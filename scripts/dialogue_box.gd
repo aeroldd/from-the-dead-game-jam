@@ -95,6 +95,7 @@ func _on_dialogue_finished(dialogue: Dialogue) ->void:
 		wait_timer.start()	
 	else:
 		get_tree().paused = false
+		SignalBus.emit_signal("event_finished")
 		
 	# Show dialogue options if there are dialogue options
 	# Display the menu options if the dialogue has options

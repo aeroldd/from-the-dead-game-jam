@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cysf0lorudaq4" path="res://scenes/player.tscn" id="1_2mlbj"]
 [ext_resource type="PackedScene" uid="uid://ba8dedrg1j0w" path="res://ui/dialogue_box.tscn" id="3_u3agk"]
+[ext_resource type="PackedScene" uid="uid://c0rs6iwa6dawb" path="res://scenes/cursed_object.tscn" id="6_7gy1f"]
 [ext_resource type="PackedScene" uid="uid://bjokg5crtxtyi" path="res://scenes/interactable_object.tscn" id="9_7t50k"]
 [ext_resource type="Texture2D" uid="uid://doa33jftb87cv" path="res://textures/ball.png" id="10_m5ii3"]
-[ext_resource type="Resource" uid="uid://dagkap087iqbb" path="res://dialogue/ball/ball_1.tres" id="11_ssd2m"]
 
 [node name="world" type="Node2D"]
 
@@ -20,15 +20,14 @@ collision_layer = 3
 [node name="Sprite2D" parent="InteractableObject" index="0"]
 texture = ExtResource("10_m5ii3")
 
-[node name="DialogueEvent" parent="InteractableObject/InteractArea/TriggerArea" index="4"]
-dialogue = ExtResource("11_ssd2m")
-
 [node name="DialogueBox" parent="." instance=ExtResource("3_u3agk")]
 process_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="CursedObject" parent="." instance=ExtResource("6_7gy1f")]
+position = Vector2(100, 100)
+
 [editable path="InteractableObject"]
 [editable path="InteractableObject/InteractArea"]
 [editable path="InteractableObject/InteractArea/TriggerArea"]
-[editable path="InteractableObject/InteractArea/TriggerArea/DialogueEvent"]
 [editable path="DialogueBox"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0rs6iwa6dawb"]
+
+[ext_resource type="Script" path="res://scripts/cursed_object.gd" id="1_8kdym"]
+[ext_resource type="PackedScene" uid="uid://bjokg5crtxtyi" path="res://scenes/interactable_object.tscn" id="1_x5621"]
+
+[node name="CursedObject" type="Node2D"]
+script = ExtResource("1_8kdym")
+
+[node name="InteractableObject" parent="." instance=ExtResource("1_x5621")]
+script = null
+
+[editable path="InteractableObject"]
+[editable path="InteractableObject/InteractArea"]
+[editable path="InteractableObject/InteractArea/TriggerArea"]

@@ -26,4 +26,3 @@ shape = SubResource("CircleShape2D_tciqx")
 
 [editable path="InteractArea"]
 [editable path="InteractArea/TriggerArea"]
-[editable path="InteractArea/TriggerArea/DialogueEvent"]

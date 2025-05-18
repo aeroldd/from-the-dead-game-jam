@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="InteractableObjectResource" load_steps=2 format=3 uid="uid://d0eaypxerrur5"]
+[gd_resource type="Resource" script_class="InteractableObjectResource" load_steps=4 format=3 uid="uid://d0eaypxerrur5"]
 
+[ext_resource type="Resource" uid="uid://c2lq6oa1mx6h8" path="res://dialogue/dog/dog_bed_1.tres" id="1_3143w"]
 [ext_resource type="Script" path="res://scripts/InteractableObjectResource.gd" id="1_uc1vv"]
+[ext_resource type="Texture2D" uid="uid://xetemr4fpvqa" path="res://textures/dog_bed.png" id="3_fd5bs"]
 
 [resource]
 script = ExtResource("1_uc1vv")
-collision_box = Rect2(0, 0, 0, 0)
+dialogue = ExtResource("1_3143w")
+sprite = ExtResource("3_fd5bs")
+collision_box = Rect2(0, 0, 32, 32)
