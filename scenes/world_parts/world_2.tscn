@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj75ydd44t0fm"]
+
+[ext_resource type="PackedScene" uid="uid://cysf0lorudaq4" path="res://scenes/player.tscn" id="1_x4135"]
+[ext_resource type="PackedScene" uid="uid://x56nhms7p4tf" path="res://scenes/trigger_area.tscn" id="2_ov1ty"]
+[ext_resource type="Resource" uid="uid://dagkap087iqbb" path="res://dialogue/ball/ball_1.tres" id="4_aeo7f"]
+[ext_resource type="Texture2D" uid="uid://doa33jftb87cv" path="res://textures/ball.png" id="5_eyghk"]
+[ext_resource type="PackedScene" uid="uid://ba8dedrg1j0w" path="res://ui/dialogue_box.tscn" id="6_bivpd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ekogv"]
+radius = 6.40312
+
+[node name="world2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_x4135")]
+
+[node name="Hitbox" parent="Player" index="2"]
+collision_mask = 2
+
+[node name="TriggerArea" parent="." instance=ExtResource("2_ov1ty")]
+z_index = -1
+position = Vector2(100, 100)
+event = Object(MissingNode,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","dialogue":ExtResource("4_aeo7f"),"script":null)
+
+
+[node name="CollisionShape2D" parent="TriggerArea" index="0"]
+shape = SubResource("CircleShape2D_ekogv")
+
+[node name="DialogueEvent" parent="TriggerArea"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+dialogue = ExtResource("4_aeo7f")
+script = null
+
+[node name="Sprite2D" type="Sprite2D" parent="TriggerArea"]
+texture = ExtResource("5_eyghk")
+
+[node name="GUI" parent="." instance=ExtResource("6_bivpd")]
+
+[editable path="Player"]
+[editable path="TriggerArea"]

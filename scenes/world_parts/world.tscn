@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://y5dg83uyrs23"]
+
+[ext_resource type="PackedScene" uid="uid://cysf0lorudaq4" path="res://scenes/player.tscn" id="1_2mlbj"]
+[ext_resource type="PackedScene" uid="uid://ba8dedrg1j0w" path="res://ui/dialogue_box.tscn" id="3_u3agk"]
+[ext_resource type="PackedScene" path="res://scenes/cursed_object.tscn" id="6_7gy1f"]
+[ext_resource type="PackedScene" uid="uid://bjokg5crtxtyi" path="res://scenes/interactable_object.tscn" id="9_7t50k"]
+[ext_resource type="Texture2D" uid="uid://doa33jftb87cv" path="res://textures/ball.png" id="10_m5ii3"]
+
+[node name="world" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2mlbj")]
+z_index = 5
+position = Vector2(48, 45)
+collision_layer = 3
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="InteractableObject" parent="." instance=ExtResource("9_7t50k")]
+
+[node name="Sprite2D" parent="InteractableObject" index="0"]
+position = Vector2(-5.96046e-08, -5.96046e-08)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_m5ii3")
+
+[node name="DialogueBox" parent="." instance=ExtResource("3_u3agk")]
+process_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="CursedObject" parent="." instance=ExtResource("6_7gy1f")]
+position = Vector2(100, 100)
+
+[editable path="InteractableObject"]
+[editable path="InteractableObject/InteractArea"]
+[editable path="InteractableObject/InteractArea/TriggerArea"]
+[editable path="DialogueBox"]

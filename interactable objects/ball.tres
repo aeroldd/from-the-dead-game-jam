@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InteractableObjectResource" load_steps=3 format=3 uid="uid://b4nmtrn4gd7a1"]
+
+[ext_resource type="Script" path="res://scripts/InteractableObjectResource.gd" id="1_bfng3"]
+[ext_resource type="Texture2D" uid="uid://doa33jftb87cv" path="res://textures/ball.png" id="3_pu2q1"]
+
+[resource]
+script = ExtResource("1_bfng3")
+sprite = ExtResource("3_pu2q1")
+collision_box = Rect2(0, 0, 10, 10)
